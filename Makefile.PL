@@ -40,3 +40,19 @@ WriteMakefile (
 	    },
 	},
     );
+
+1;
+
+package MY;
+
+sub postamble {
+    my $do_xt = (-d "xt" && ($ENV{AUTOMATED_TESTING} || 0) != 1)
+	? join "\n" =>
+	    'test ::',
+	    '	-@env TEST_FILES="xt/*.t" make -e test_dynamic',
+	    '	-perl ./make-doc.pl',
+	    ''
+	: "";
+    join "\n" =>
+	$do_xt;
+    } # postamble

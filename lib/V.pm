@@ -274,7 +274,7 @@ sub version {
 
     my $parsefile = $self->file;
 
-    open my $mod, "<", $parsefile or die "open ($parsefile): $!";
+    open my $mod, "<", $parsefile or die "open $parsefile: $!";
 
     my $inpod = 0;
     local $_;
@@ -306,7 +306,10 @@ sub version {
                 no strict;
                 local $sigil$name;
                 \$$name = undef;
-                do { $_ };
+                do { $_
+		    # Closing brace needs to be on next line
+		    # as toping can haz comment
+		    };
                 \$$name
 		};
 	    }
