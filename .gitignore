@@ -4,3 +4,5 @@ blib/
 .*.swp
 MYMETA.*
 META.*
+*.tgz
+*.tar.gz

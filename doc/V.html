@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>V - Print version of the specified module(s).</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:hmbrand@cpan.org" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#V%3A%3Aget_version-pkg">V::get_version($pkg)</a>
+        <ul>
+          <li><a href="#Arguments">Arguments</a></li>
+          <li><a href="#Response">Response</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>V - Print version of the specified module(s).</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>$ perl -MV=V</code></pre>
+
+<p>or if you want more than one</p>
+
+<pre><code>$ perl -MV=CPAN,V</code></pre>
+
+<p>Can now also be used as a light-weight module for getting versions of modules without loading them:</p>
+
+<pre><code>require V;
+printf &quot;%s has version &#39;%s&#39;\n&quot;, &quot;V&quot;, V::get_version (&quot;V&quot;);</code></pre>
+
+<p>Starting with version <b>0.17</b>, V will show all <code>package</code>s or <code>class</code>es in a file that have a version. If one wants to see all packages/classes from that file, set the environment variable <code>PERL_V_SHOW_ALL</code> to a <i>true</i> value.</p>
+
+<p>If you want all available files/versions from <code>@INC</code>:</p>
+
+<pre><code>require V;
+my @all_V = V::Module::Info-&gt;all_installed (&quot;V&quot;);
+printf &quot;%s:\n&quot;, $all_V[0]-&gt;name;
+for my $file (@all_V) {
+    my ($versions) = $file-&gt;version; # Must be list context
+    if (@$versions &gt; 1) {
+        say &quot;\t&quot;, $file-&gt;name;
+        print &quot;\t    %-30s: %s\n&quot;, $_-&gt;{pkg}, $_-&gt;{version} for @versions;
+        }
+    else {
+        printf &quot;\t%-50s - %s\n&quot;, $file-&gt;file, $versions-&gt;[0]{version};
+        }
+    }</code></pre>
+
+<p>Each element in that array isa <code>V::Module::Info</code> object with 3 attributes and a method:</p>
+
+<dl>
+
+<dt id="attribute-name"><i>attribute</i> <b>name</b></dt>
+<dd>
+
+<p>The package name.</p>
+
+</dd>
+<dt id="attribute-file"><i>attribute</i> <b>file</b></dt>
+<dd>
+
+<p>Full filename with directory.</p>
+
+</dd>
+<dt id="attribute-dir"><i>attribute</i> <b>dir</b></dt>
+<dd>
+
+<p>The base directory (from <code>@INC</code>) where the package-file was found.</p>
+
+</dd>
+<dt id="method-version"><i>method</i> <b>version</b></dt>
+<dd>
+
+<p>This method will look through the file to see if it can find a version assignment in the file and uses that to determine the version. As of version <b>0.13_01</b>, all versions found are passed through the <a>version</a> module.</p>
+
+<p>As of version <b>0.16_03</b> we look for all types of version declaration:</p>
+
+<pre><code>package Foo;
+our $VERSION = 0.42;</code></pre>
+
+<p>and</p>
+
+<pre><code>package Foo 0.42;</code></pre>
+
+<p>and</p>
+
+<pre><code>package Foo 0.42 { ... }</code></pre>
+
+<p>Not only do we look for the <code>package</code> keyword, but also for <code>class</code>. In list context this method will return an arrayref to a list of structures:</p>
+
+<dl>
+
+<dt id="pkg"><i>pkg</i></dt>
+<dd>
+
+<p>The name of the <code>package</code>/<code>class</code>.</p>
+
+</dd>
+<dt id="version"><i>version</i></dt>
+<dd>
+
+<p>The version for that <code>package</code>/<code>class</code>. (Can be absent if <code>$PERL_V_SHOW_ALL</code> is true.)</p>
+
+</dd>
+<dt id="ord"><i>ord</i></dt>
+<dd>
+
+<p>The ordinal number of occurrence in the file.</p>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module uses stolen code from <a>Module::Info</a> to find the location and version of the specified module(s). It prints them and exit()s.</p>
+
+<p>It defines <code>import ()</code> and is based on an idea from Michael Schwern on the perl5-porters list. See the discussion:</p>
+
+<pre><code>https://www.nntp.perl.org/group/perl.perl5.porters/2002/01/msg51007.html</code></pre>
+
+<h2 id="V::get_version-pkg">V::get_version($pkg)</h2>
+
+<p>Returns the version of the first available file for this package as found by following <code>@INC</code>.</p>
+
+<h3 id="Arguments">Arguments</h3>
+
+<dl>
+
+<dt id="pkg1">1. $pkg</dt>
+<dd>
+
+<p>The name of the package for which one wants to know the version.</p>
+
+</dd>
+</dl>
+
+<h3 id="Response">Response</h3>
+
+<p>This <code>V::get_version ()</code> returns the version of the file that was first found for this package by following <code>@INC</code> or <code>undef</code> if no file was found.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>There are numerous module on CPAN that (try to) extract the VERSION from modules. <a>ExtUtils::MakeMaker</a> maybe being th most important inspiration. <a>Module::Info</a> was used to copy code from.</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Abe Timmerman -- 2002 - 2024 (&#x271D; 2024-08-15 &#x1F622;) H.Merijn Brand <code>&lt;hmbrand@cpan.org&gt;</code>.</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>Copyright 2024-2024 H.Merijn Brand, All Rights Reserved. Copyright 2002-2024 Abe Timmerman, All Rights Reserved.</p>
+
+<p>This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT-ABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+
+</body>
+
+</html>
