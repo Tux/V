@@ -50,7 +50,7 @@ sub postamble {
 	? join "\n" =>
 	    'test ::',
 	    '	-@env TEST_FILES="xt/*.t" make -e test_dynamic',
-	    '	-perl ./make-doc.pl',
+	    '	-perl doc/make-doc.pl',
 	    ''
 	: "";
     join "\n" =>

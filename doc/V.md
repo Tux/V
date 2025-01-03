@@ -124,7 +124,7 @@ H.Merijn Brand `<hmbrand@cpan.org>`.
 
 # COPYRIGHT AND LICENSE
 
-Copyright 2024-2024 H.Merijn Brand, All Rights Reserved.
+Copyright 2024-2025 H.Merijn Brand, All Rights Reserved.
 Copyright 2002-2024 Abe Timmerman,  All Rights Reserved.
 
 This library is free software; you can redistribute it and/or modify

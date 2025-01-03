@@ -1,4 +1,5 @@
-0.20 2024-??-?? H.Merijn Brand
+0.20 2025-01-03 H.Merijn Brand
+ - This release is in fond memories of Abe Timmerman
  - New maint
  - Add cpanfile
  - Include xt in "make test" for dev
