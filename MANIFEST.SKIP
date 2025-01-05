@@ -1,5 +1,6 @@
 .aspell.local.pws
 blib/
+xt/
 core-t/
 debian/
 doc/
