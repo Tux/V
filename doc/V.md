@@ -119,8 +119,8 @@ inspiration. [Module::Info](https://metacpan.org/pod/Module%3A%3AInfo) was used 
 
 # AUTHOR
 
-Abe Timmerman -- 2002 - 2024 (✝ 2024-08-15 😢)
-H.Merijn Brand `<hmbrand@cpan.org>`.
+    Abe Timmerman -- 2002 - 2024 (✝ 2024-08-15 😢)
+    H.Merijn Brand C<< <hmbrand@cpan.org> >> (2024 ...)
 
 # COPYRIGHT AND LICENSE
 

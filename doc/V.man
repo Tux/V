@@ -109,8 +109,8 @@ SEE ALSO
        inspiration. Module::Info was used to copy code from.
 
 AUTHOR
-       Abe Timmerman -- 2002 - 2024 (â 2024-08-15 ð¢) H.Merijn Brand
-       "<hmbrand@cpan.org>".
+        Abe Timmerman -- 2002 - 2024 (â 2024-08-15 ð¢)
+        H.Merijn Brand C<< <hmbrand@cpan.org> >> (2024 ...)
 
 COPYRIGHT AND LICENSE
        Copyright 2024-2025 H.Merijn Brand, All Rights Reserved.  Copyright
