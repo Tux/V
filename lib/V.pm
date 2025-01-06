@@ -6,7 +6,7 @@ use strict;
 use warnings;
 
 use vars qw( $VERSION $NO_EXIT );
-$VERSION  = "0.21";
+$VERSION  = "0.22";
 
 $NO_EXIT ||= 0; # prevent import() from exit()ing and fall of the edge
 
