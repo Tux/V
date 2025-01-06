@@ -43,7 +43,7 @@ To install this module type the following commands:
 
 # DEPENDENCIES
 
-This module requires no extra modules or libraries from perl version 5.10.1
+This module requires no extra modules or libraries from perl version 5.14.0
 (exept [`Test::More`](https://metacpan.org/pod/Test::More),
 [`Test::Warnings`](https://metacpan.org/pod/Test::Warnings),
 [`Test::Fatal`](https://metacpan.org/pod/Test::Fatal) for the test-suite).
