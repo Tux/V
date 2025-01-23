@@ -20,6 +20,7 @@ t/lib/GH/Issue1.pm
 t/lib/Misleading.pm
 t/lib/Misleading/GetVersion.pm
 t/lib/Misleading/Version.pm
+t/lib/ModExtVSN.pm
 t/lib/PkgWithVersion.pm
 t/lib/PkgWithVersion2.pm
 t/lib/V_Version.pm
