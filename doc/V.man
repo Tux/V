@@ -123,4 +123,4 @@ COPYRIGHT AND LICENSE
        WITHOUT ANY WARRANTY; without even the implied warranty of
        MERCHANT-ABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-perl v5.40.0                      2025-01-05                              V(3)
+perl v5.40.0                      2025-01-23                              V(3)
