@@ -109,7 +109,7 @@ SEE ALSO
        inspiration. Module::Info was used to copy code from.
 
 AUTHOR
-        Abe Timmerman -- 2002 - 2024 (â 2024-08-15 ð¢)
+        Abe Timmerman -- 2002 - 2024 (? 2024-08-15 ?)
         H.Merijn Brand C<< <hmbrand@cpan.org> >> (2024 ...)
 
 COPYRIGHT AND LICENSE
@@ -123,4 +123,4 @@ COPYRIGHT AND LICENSE
        WITHOUT ANY WARRANTY; without even the implied warranty of
        MERCHANT-ABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-perl v5.40.0                      2025-01-23                              V(3)
+perl v5.40.1                      2025-01-23                              V(3)

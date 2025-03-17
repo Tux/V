@@ -3,7 +3,7 @@
 Report issues via email at: H.Merijn Brand <hmbrand@cpan.org>.
 
 
-This is the Security Policy for the Perl V distribution.
+This is the Security Policy for V.
 
 The latest version of the Security Policy can be found in the
 [git repository for V](https://github.com/Tux/V).
