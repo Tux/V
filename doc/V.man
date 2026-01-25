@@ -110,10 +110,10 @@ SEE ALSO
 
 AUTHOR
         Abe Timmerman -- 2002 - 2024 (? 2024-08-15 ?)
-        H.Merijn Brand C<< <hmbrand@cpan.org> >> (2024 ...)
+        H.Merijn Brand C<< <hmbrand@cpan.org> >> (2026 ...)
 
 COPYRIGHT AND LICENSE
-       Copyright 2024-2025 H.Merijn Brand, All Rights Reserved.  Copyright
+       Copyright 2024-2026 H.Merijn Brand, All Rights Reserved.  Copyright
        2002-2024 Abe Timmerman,  All Rights Reserved.
 
        This library is free software; you can redistribute it and/or modify it
@@ -123,4 +123,4 @@ COPYRIGHT AND LICENSE
        WITHOUT ANY WARRANTY; without even the implied warranty of
        MERCHANT-ABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-perl v5.40.1                      2025-01-23                              V(3)
+perl v5.42.0                      2026-01-25                              V(3)

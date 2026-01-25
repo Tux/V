@@ -55,13 +55,13 @@ requires:
 configure_requires:
     ExtUtils::MakeMaker: 0
 configure_recommends:
-    ExtUtils::MakeMaker: 7.72
+    ExtUtils::MakeMaker: 7.76
 test_requires:
     Test::Simple:        0.88
     Test::Fatal:         0
     Test:Warnings:       0
 test_recommends:
-    Test::Simple:        1.302209
+    Test::Simple:        1.302219
 resources:
     license:             http://dev.perl.org/licenses/
     repository:          https://github.com/Tux/V
