@@ -41,7 +41,7 @@ version:                 VERSION
 abstract:                Print version of the specified module(s)
 license:                 perl
 author:
-    - H.Merijn Brand <hmbrand@cpan.org>
+    - H.Merijn Brand <perl5@tux.freedom.nl>
     - Abe Timmerman
 generated_by:            Author
 distribution_type:       module
@@ -55,13 +55,13 @@ requires:
 configure_requires:
     ExtUtils::MakeMaker: 0
 configure_recommends:
-    ExtUtils::MakeMaker: 7.76
+    ExtUtils::MakeMaker: 7.78
 test_requires:
     Test::Simple:        0.88
     Test::Fatal:         0
     Test:Warnings:       0
 test_recommends:
-    Test::Simple:        1.302219
+    Test::Simple:        1.302224
 resources:
     license:             http://dev.perl.org/licenses/
     repository:          https://github.com/Tux/V

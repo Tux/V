@@ -10,7 +10,7 @@ WriteMakefile (
     NAME           => "V",
     VERSION_FROM   => "lib/V.pm",
     ABSTRACT_FROM  => "lib/V.pm",
-    AUTHOR         => 'H.Merijn Brand <hmbrand@cpan.org>',
+    AUTHOR         => 'H.Merijn Brand <perl5@tux.freedom.nl>',
 
     TEST_REQUIRES => {
 	"Test::Simple"   => 0.88,
